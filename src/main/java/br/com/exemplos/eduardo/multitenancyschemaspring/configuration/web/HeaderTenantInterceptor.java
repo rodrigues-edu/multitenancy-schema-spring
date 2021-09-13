@@ -16,12 +16,12 @@ public class HeaderTenantInterceptor implements WebRequestInterceptor {
     }
 
     @Override
-    public void postHandle(WebRequest webRequest, ModelMap modelMap) throws Exception {
+    public void postHandle(WebRequest request, ModelMap model) throws Exception {
         ThreadTenantStorage.clear();
     }
 
     @Override
-    public void afterCompletion(WebRequest webRequest, Exception e) throws Exception {
+    public void afterCompletion(WebRequest request, Exception ex) throws Exception {
 
     }
 }

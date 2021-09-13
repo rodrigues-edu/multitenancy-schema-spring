@@ -12,14 +12,15 @@ import java.util.Map;
 @ConfigurationProperties(prefix = "tenants")
 public class DataSourceProperties {
 
-    private Map<Object, Object> dataSources = new LinkedHashMap<>();
+    private Map<Object, Object> datasources = new LinkedHashMap<>();
 
-    public Map<Object, Object> getDataSources() {
-        return dataSources;
+    public Map<Object, Object> getDatasources() {
+        return datasources;
     }
 
-    public void setDataSources(Map<String, Map<String, String>> dataSources) {
-        dataSources.forEach((key, value) -> this.dataSources.put(key, convert(value)));
+    public void setDatasources(Map<String, Map<String, String>> datasources) {
+        datasources
+                .forEach((key, value) -> this.datasources.put(key, convert(value)));
     }
 
     public DataSource convert(Map<String, String> source) {

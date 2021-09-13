@@ -19,14 +19,14 @@ public class DataSourceConfiguration {
     @Bean
     public DataSource dataSource() {
         TenantRoutingDataSource customDataSource = new TenantRoutingDataSource();
-        customDataSource.setTargetDataSources(dataSourceProperties.getDataSources());
+        customDataSource.setTargetDataSources(dataSourceProperties.getDatasources());
         return customDataSource;
     }
 
     @PostConstruct
     public void migrate() {
         dataSourceProperties
-                .getDataSources()
+                .getDatasources()
                 .values()
                 .stream()
                 .map(dataSource -> (DataSource) dataSource)
